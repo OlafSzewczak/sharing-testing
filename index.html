@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="Facebook">Share me on Facebook</a>
+    <a href="Linkedin">Share me on Linkedin</a>
+    <a href="X">Share me on X</a>
+
+    <script>
+        let currentUrl = window.location.href;
+        document.querySelectorAll('a').forEach(link => {
+            
+            link.href = currentUrl;
+        });
+
+    </script>
+</body>
+</html>
