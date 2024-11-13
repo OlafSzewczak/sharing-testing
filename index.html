@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My sharing site</title>
+
+    <meta property="og:title" content="Protect your privacy with Thermal Imaging pt 2" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="https://sensesoft.eu/articles/protect-privacytwo/privacy-main-pt-2.jpg" />
 </head>
 <body>
     
     <a href="Facebook">Share me on Facebook</a>
+    <br>
     <a href="Linkedin">Share me on Linkedin</a>
+    <br>
     <a href="X">Share me on X</a>
 
     <script>
         let currentUrl = window.location.href;
         document.querySelectorAll('a').forEach(link => {
-            
-            link.href = currentUrl;
+            let href = link.getAttribute("href");
+            if(href.includes("Facebook")) {
+                link.href = `https://www.facebook.com/sharer.php?u=${currentUrl}`;
+            } else if(href.includes("Linkedin")) {
+                link.href = `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}`;
+            } else if(href.includes("X")) {
+                link.href = `https://x.com/intent/tweet?url=${currentUrl}`;
+            }
         });
 
     </script>
